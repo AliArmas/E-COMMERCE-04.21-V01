@@ -12,4 +12,14 @@ export class NvarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public user : any;
+  public logued = false;
+  categorias = [
+    'Consumibles',
+    'Muebles',
+    'Computadoras',
+    'Servicio tecnico'
+  ]
+  
+  
 }

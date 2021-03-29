@@ -10,6 +10,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+//modulos
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//formulario
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+//http
+import { HttpClientModule } from '@angular/common/http';
+//import { NewProductComponent } from './CRUD/new-product/new-product.component';
+//import { ListProductsComponent } from './CRUD/list-products/list-products.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +32,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    //AngularFireModule.initializeApp(firebaseConfig),
+    //AngularFireAuthModule,
+    //AngularFireModule,
+    //AngularFireStorageModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
