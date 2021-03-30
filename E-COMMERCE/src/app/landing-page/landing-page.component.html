@@ -1,1 +1,127 @@
-<p>landing-page works!</p>
+<div class="wrap">
+    <div class="conten ">
+        <div class="row">
+            <div class="col-5">
+                <img src="/assets/logo.png" alt="">
+                <div class="texto">
+                    <h1>Soluciones integrales de computo</h1>
+                    <h5>20 años siendo tu mejor opción!</h5>
+                    <div class="row ">
+                        <div class="col-6" >
+                            <button class="but btn-block ui inverted yellow basic button but" (click)="redirectTo()">Registrarse</button>
+                        </div>
+                        <div class="col-6">
+                            <a href="#pagina"><button class="ui inverted red basic button but" >Leer mas</button></a>
+                        </div>
+                        <div class="col-12">
+                            <a href="#pagina"><button class="ui inverted red basic button but" >Leer mas</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page" >
+    <a name="pagina"></a>
+    <div class="row">
+        <div class="col-6">
+            <img src="/assets/camera.jpg" alt="">
+        </div>
+        <div class="col-6 d-flex align-items-center">
+            <div class="txtP">
+                <h1 class="titleText"><span>S</span>eguriad en tu negocio</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo itaque harum voluptate tempora magni libero ullam officiis nesciunt cum nisi. Illum tenetur voluptates nihil necessitatibus iste similique numquam tempora corporis.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-6 d-flex align-items-center">
+            <div class="txtP ">
+                <h1 class="titleText"><span>L</span>a misma calidad mejor accsesibilidad</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo itaque harum voluptate tempora magni libero ullam officiis nesciunt cum nisi. Illum tenetur voluptates nihil necessitatibus iste similique numquam tempora corporis.</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <img src="/assets/shop.jpg" alt="">
+        </div>
+        
+    </div>    
+    <div class="row mt-5">
+        
+        <div class="col-6">
+            <img src="/assets/office.png" alt="">
+        </div>
+        <div class="col-6 d-flex align-items-center">
+            <div class="txtP">
+                <h1 class="titleText"><span>D</span>istribuidor autorizado de OFIMAGEN</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo itaque harum voluptate tempora magni libero ullam officiis nesciunt cum nisi. Illum tenetur voluptates nihil necessitatibus iste similique numquam tempora corporis.</p>
+            </div>
+        </div>
+    </div>    
+    <div class="row mt-5">
+        <div class="col-6 d-flex align-items-center">
+            <div class="txtP">
+                <h1 class="titleText"><span>E</span>L mejor servicio tecnico</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo itaque harum voluptate tempora magni libero ullam officiis nesciunt cum nisi. Illum tenetur voluptates nihil necessitatibus iste similique numquam tempora corporis.</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <img src="/assets/reparar.jpg" alt="">
+        </div> 
+    </div>   
+</div>
+<div class="contact">
+    <div class="content">
+        <h2>Contactanos</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolores iste, veritatis sit nihil unde rem mollitia, impedit ipsam quod omnis nulla, adipisci illum? Asperiores voluptatibus et aliquid quasi temporibus.</p>
+    </div>
+    <div class="contenedor">
+        <div class="contacInfo">
+            <div class="box">
+                <div class="icon"></div>
+                <div class="text">
+                    <h3>Direccion</h3>
+                     <p>calle 12c central de abastos periferico sur</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"></div>
+                <div class="text">
+                    <h3>Telefono</h3>
+                     <p>9613632550</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"></div>
+                <div class="text">
+                    <h3>Correo electronico</h3>
+                     <p>pagina.web.django@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="contactForm">
+            <div>
+                <form>
+                    <h2>Envianos un correo</h2>
+                    <div class="inpuBox">
+                        <input type="text" name="" id="" required="required" formControlName="fullName">
+                        <span>Nombre completo</span>
+                    </div>
+                    <div class="inpuBox">
+                        <input type="text" name="" id="" required="required" formControlName="email">
+                        <span>email</span>
+                    </div>
+                    <div class="inpuBox">
+                        <textarea required="required" formControlName="message"></textarea>
+                        <span>Mensaje</span>
+                    </div>
+                    <div class="inpuBox">
+                        <input type="submit" name="" id="" value="Enviar" (click)="valuesEmail()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
