@@ -16,6 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 //http
 import { HttpClientModule } from '@angular/common/http';
+import { FreqQuestComponent } from './freq-quest/freq-quest.component';
+import { BillComponent } from './bill/bill.component';
+import { QuotationComponent } from './quotation/quotation.component';
 //import { NewProductComponent } from './CRUD/new-product/new-product.component';
 //import { ListProductsComponent } from './CRUD/list-products/list-products.component';
 
@@ -28,7 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     FooterComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    FreqQuestComponent,
+    BillComponent,
+    QuotationComponent
   ],
   imports: [
     BrowserModule,
