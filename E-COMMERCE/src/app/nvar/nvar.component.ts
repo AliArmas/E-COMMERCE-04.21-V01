@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceAuthService} from '../service-auth.service'
+import { SocialAuthService } from "angularx-social-login";
+import { SocialUser } from "angularx-social-login";
 
 @Component({
   selector: 'app-nvar',
@@ -7,13 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NvarComponent implements OnInit {
 
-  constructor() { }
+  user: SocialUser = new SocialUser;
+  loggedIn: boolean = false;
+
+  constructor(private _service :ServiceAuthService,private authService: SocialAuthService) { }
 
   ngOnInit(): void {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
   }
+  
 
   // public user : any;
   // public logued = false;
+
   categorias = [
     'Consumibles',
     'Muebles',
@@ -25,4 +37,7 @@ export class NvarComponent implements OnInit {
     console.log("hola");
   }
 
+  logOut(){
+    this._service.signOut()
+  }
 }

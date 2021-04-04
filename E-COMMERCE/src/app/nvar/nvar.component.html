@@ -11,16 +11,16 @@
               <a class="nav-link" [routerLink]="['/home']"><span uk-icon="home"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/login']">login</a>
-              <a class="nav-link" [routerLink]="['/home']">logout</a>
+              <a class="nav-link" [routerLink]="['/login']" *ngIf="!loggedIn">login</a>
+              <a class="nav-link" [routerLink]="['/home']" (click)="logOut()" *ngIf="loggedIn">logout</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/register']">Register</a>
-              <a class="nav-link" [routerLink]="['/carrito']"><span uk-icon="cart"></span></a>
+              <a class="nav-link" [routerLink]="['/register']"*ngIf="!loggedIn">Register</a>
+              <a class="nav-link" [routerLink]="['/carrito']" *ngIf="loggedIn" ><span uk-icon="cart"></span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/support']">Soporte</a>
-            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/support']">Preguntas frecuentes</a>
+            </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                 aria-expanded="false">Categorias</a>
@@ -34,7 +34,7 @@
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
           </form>
           <div class="perfilA">
-            <a class="nav-link  perfilN" [routerLink]="['/user']"><!--<img src="{{user?.photoURL}}" alt="">-->Usurio</a>
+            <a class="nav-link  perfilN" [routerLink]="['/user']"><img src="{{ user.photoUrl }}"></a>
           </div>
         </div>
       </nav>

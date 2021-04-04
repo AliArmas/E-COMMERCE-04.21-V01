@@ -22,6 +22,12 @@ import { QuotationComponent } from './quotation/quotation.component';
 //import { NewProductComponent } from './CRUD/new-product/new-product.component';
 //import { ListProductsComponent } from './CRUD/list-products/list-products.component';
 
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +47,7 @@ import { QuotationComponent } from './quotation/quotation.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    SocialLoginModule,
     //AngularFireModule.initializeApp(firebaseConfig),
     //AngularFireAuthModule,
     //AngularFireModule,
@@ -48,7 +55,26 @@ import { QuotationComponent } from './quotation/quotation.component';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '526256856014-e7sl7jlj3md0o2aild8dqllvu03cmllo.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

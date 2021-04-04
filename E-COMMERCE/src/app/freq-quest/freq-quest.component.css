@@ -1,0 +1,12 @@
+.cover {
+    height: 200px;
+    background-image: url("/assets/freq.jpg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+}
+h1{
+    color: rgb(232, 232, 232);
+}

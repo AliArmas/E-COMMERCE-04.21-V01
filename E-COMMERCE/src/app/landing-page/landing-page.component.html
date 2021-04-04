@@ -8,13 +8,13 @@
                     <h5>20 años siendo tu mejor opción!</h5>
                     <div class="row ">
                         <div class="col-6" >
-                            <button class="but btn-block ui inverted yellow basic button but" (click)="redirectTo()">Registrarse</button>
+                            <button class="but btn-block ui inverted yellow basic button but" (click)="redirectTo()" *ngIf="!loggedIn">Registrarse</button>
                         </div>
                         <div class="col-6">
-                            <a href="#pagina"><button class="ui inverted red basic button but" >Leer mas</button></a>
+                            <a href="#pagina"><button class="ui inverted red basic button but"*ngIf="!loggedIn" >Leer mas</button></a>
                         </div>
                         <div class="col-12">
-                            <a href="#pagina"><button class="ui inverted red basic button but" >Leer mas</button></a>
+                            <a href="#pagina"><button class="ui inverted red basic button but" *ngIf="loggedIn">Leer mas</button></a>
                         </div>
                     </div>
                 </div>
