@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceAuthService } from '../service-auth.service'
 
@@ -10,8 +10,12 @@ import { ServiceAuthService } from '../service-auth.service'
 })
 export class LoginComponent implements OnInit {
   resetEmail = new FormControl('');
+  // loginForm!: FormGroup
+  loginFrom = new FormGroup({
+    user: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(5)]),
+  })
   loginForm!: FormGroup
- 
   constructor(private router: Router, private _formBuider : FormBuilder, private _AUTHSERVICE: ServiceAuthService) { }
     ngOnInit(): void {
     this.loginForm = this._formBuider.group({
