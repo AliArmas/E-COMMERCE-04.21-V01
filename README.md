@@ -4,15 +4,15 @@ sigue las siguientes instrucciones.
                               *Instrucciones*
 --------------------------------------------------------------------------
 
-#Entrar a la consola de la maquina de ser Linux, gitbash de ser windows.
+>Entrar a la consola de la maquina de ser Linux, gitbash de ser windows.
   -correr los paquetes de npm en tu maquina.
       npm install nodejs
   -instalar angualar
       npm angular cli
-#El siguiente comando seria para iniciar el proyecto
+>El siguiente comando seria para iniciar el proyecto
 
 2.-ng serve
-#Paso final
+>Paso final
 
   -abrir en tu navegador una pestaña con el siguiente link
       [-]http://localhost:4200/home
