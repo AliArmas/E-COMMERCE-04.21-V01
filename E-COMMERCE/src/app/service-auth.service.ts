@@ -31,7 +31,7 @@ export class ServiceAuthService {
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    Authorization: 'KlUz28dW8CseY3E6DGW18X6z'
+    Authorization: ''
   })
 };
 httpOptions.headers = httpOptions.headers.set('Authorization', 'KlUz28dW8CseY3E6DGW18X6z');
