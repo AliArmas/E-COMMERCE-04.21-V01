@@ -1,18 +1,92 @@
 
-<div class="col-3 bg-light p-3 border">
-    .col-6 .col-sm-4  
-    <p>quotation works!</p>
-<p>aklsjdklajdklajslkdjasdddddddddddddddddddddddddddddddd
-    asdalñsdkalñkdlñaskdlñaksdlñaskdlñaksdlñaksdñlakslñdkañslda
-    sdaksdlakdlñkañsdlkañldkañlsdkñalskdñlaskdñlaskdñlakd
-    asdklakjsdlasdlkjasdkljaslkdjalksdjlaksjdklajdad
-    asdklajdlkajdkl jaldjklasjdklajdlkad
+<div class="contenido active" id="contenedor">
 
-</p>
+    <nav class="columna">
+        <div class="contenedor-logo">
+            <button id="boton-menu" class="boton-menu" (click)="contenedor()"><i class="fas fa-bars"></i></button>
+        </div>
+        <a href="#" class="active"><i class="fas fa-file-invoice-dollar"></i>Cotización</a>
+        <hr>
+        <p>Enviar por: </p>
+        <a href="#"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+        <a href="#"><i class="fab fa-facebook-messenger"></i>Messenger</a>
+        <a href="#"><i class="fas fa-envelope"></i>Email</a>
+    </nav>
+
+    <main class="formulario">Formulario
+        <div>
+            <div class="container" id="advanced-search-form">
+                <h2>Solicitud De Cotización</h2>
+                <div class="image row">
+                    <div class="col align-self-start">
+
+                    </div>
+                    <div class="col align-self-center">
+                    </div>
+                    <div class="col align-self-end">
+                        <img src="../../assets/logo-cot.png" alt="">
+                    </div>
+                    
+                </div>
+                <form>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Fecha" id="Fecha">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+                        </div>
+                      </div>
+                      <br>
+                      <div class="col-12">
+                        <label for="inputAddress" class="form-label">Mediante la presente me permito saludarle y aprovecho la ocasión para enviarle la siguiente solicitud de cotización.</label>
+                      </div>
+                      <br>
+                      <div class="form-floating">
+                        <textarea class="form-control" placeholder="Concepto y descripcion de la cotización" id="floatingTextarea2" style="height: 200px"></textarea>
+                      </div>
+                    <hr>
+                    <br>
+                    <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">6/a. Poniente Sur #19</label>
+                        <label for="validationCustom01" class="form-label">Entre 1/a. Y 2/a. Sur</label>
+                        <label for="validationCustom01" class="form-label">Villaflores, Chiapas</label> 
+                        </div> 
+                      <div class="col-md-4">
+                        <label for="validationCustom02" class="form-label">www.sicsoluciones.com</label>
+                        </div>
+                      <div class="col-md-4">
+                        <label for="validationCustomUsername" class="form-label">Tel y Fax  65 200 91</label>
+                        <label for="validationCustomUsername" class="form-label">65 217 63</label>
+                        <label for="validationCustomUsername" class="form-label">sic@sicsoluciones.com</label>
+                          </div>
+                    </form>      
+                    <div class="d-md-flex justify-content-md-center">
+                        <button type="button" class="btn btn-primary">Button</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
 </div>
-<div class="wrapper fadeInDown mt-5">
+
+
+
+<!-- <div class="wrapper fadeInDown mt-5">
     <div id="formContent">
     <button type="button" style="margin: 10px" class="btn btn-primary" (click)="Gquotation()">Cotizacion</button>
 
 </div>
-</div>
+</div> -->
