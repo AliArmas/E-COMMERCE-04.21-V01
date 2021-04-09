@@ -30,15 +30,13 @@ export class LoginComponent implements OnInit {
 
   onRegisterGoogle(){
     this._AUTHSERVICE.signInWithGoogle()
-    location.reload()
   }
   
   onRegisterFacebook(){
-    console.log("Registro en facebook")
+    this._AUTHSERVICE.signInWithFB() 
   }
 
   resetPassword(){
-    console.log("")
+    console.log("reset")
   }
-  
 }

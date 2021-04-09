@@ -15,11 +15,17 @@ export class ServiceAuthService {
 
 
   signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
+    // .then(data => {
+    //   console.log(data);
+    // });
   }
 
   signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID)
+    // .then(data => {
+    //   console.log(data);
+    // });
   }
 
   signOut(): void {
@@ -28,10 +34,10 @@ export class ServiceAuthService {
 
 }
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    Authorization: ''
-  })
-};
-httpOptions.headers = httpOptions.headers.set('Authorization', 'KlUz28dW8CseY3E6DGW18X6z');
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     'Content-Type': 'application/json',
+//     Authorization: ''
+//   })
+// };
+// httpOptions.headers = httpOptions.headers.set('Authorization', 'KlUz28dW8CseY3E6DGW18X6z');

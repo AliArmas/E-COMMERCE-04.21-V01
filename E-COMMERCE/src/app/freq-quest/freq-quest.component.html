@@ -34,8 +34,10 @@
           </div>
         </div>
         <div class="uk-animation-toggle  d-grid gap-2">
-          <button class="uk-card uk-card-default uk-card-body uk-animation-shake fluid ui button ui inverted green button">
-            <a href="https://api.whatsapp.com/send?phone=529613603790&text=Necesito ayuda con la pagina">
+          <button
+            class="uk-card uk-card-default uk-card-body uk-animation-shake fluid ui button ui inverted green button">
+            <a
+              href="https://api.whatsapp.com/send?phone=529613603790&text=Necesito ayuda con la pagina image=assets/whatsappFAQ.jpg">
               <img src="assets/whatsappFAQ.png" alt="">
             </a>
           </button>
@@ -47,8 +49,8 @@
         <div class="accordion-item">
           <h3>¿Como registrarse?</h3>
           <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
               <i class="chevron down icon"></i>
             </button>
           </h2>
@@ -157,7 +159,8 @@
           </div>
         </div>
         <div class="uk-animation-toggle d-grid gap-2">
-          <button class="uk-card uk-card-default uk-card-body uk-animation-shake fluid ui button ui inverted blue button">
+          <button
+            class="uk-card uk-card-default uk-card-body uk-animation-shake fluid ui button ui inverted blue button">
             <img src="assets/messenger.png" alt="">
           </button>
         </div>
@@ -171,3 +174,24 @@
     </div>
   </div>
 </div>
+<div>
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v10.0'
+      });
+    };
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  <!-- Your Chat Plugin code -->
+  <div class="fb-customerchat" attribution="setup_tool" page_id="103888928482873">
+  </div>
+</div>
+<!-- Load Facebook SDK for JavaScript -->
