@@ -191,7 +191,12 @@
 /* -- -- -- -- Formulario lateral -- -- -- -- */
 .formulario{
   grid-area: formulario;
-  background: #414141;
+  /* background: #414141; */
+  background-image:url(../../assets/fifo.png);
+  /* background-position: center; */
+  background-size: 25px 25px;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 } 
 /* -- -- -- -- Formulario CSS -- -- -- -- */
 main{
