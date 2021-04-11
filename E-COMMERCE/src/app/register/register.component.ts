@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { ServiceAuthService } from '../service-auth.service'
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -19,7 +21,7 @@ export class RegisterComponent implements OnInit {
     status: new FormControl('', [Validators.required])
   })
   registerForm!: FormGroup;
-  constructor(private router: Router, private _formBuild: FormBuilder) { }
+  constructor(private router: Router, private _formBuild: FormBuilder, private _AuthService: ServiceAuthService) { }
 
   ngOnInit(): void {
     this.registerForm = this._formBuild.group({
@@ -44,12 +46,14 @@ export class RegisterComponent implements OnInit {
     //this.svc.registerPost(data.user,data.name,data.email,data.password,data.status)
   }
 
-  onRegister() {
+  create() {
     const { email, password } = this.registerFrom.value;
-    // this.svc.login(email,password);
+    const user = this._AuthService.registroEmail(email, password)
     console.log("Email: " + email)
     console.log("Contraseña: " + password)
-    this.router.navigate(['/home'])
+    if (user) {
+      this.router.navigate(['/home'])
+    }
   }
 
   // create(){
@@ -60,7 +64,7 @@ export class RegisterComponent implements OnInit {
   //     console.log(error);
   //   });
   // }
-  create(){
+  createA() {
     console.log("hola")
   }
 

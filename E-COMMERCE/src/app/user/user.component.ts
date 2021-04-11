@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SocialAuthService } from "angularx-social-login";
-import { SocialUser } from "angularx-social-login";
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user',
@@ -9,15 +9,14 @@ import { SocialUser } from "angularx-social-login";
 })
 export class UserComponent implements OnInit {
 
-  user: SocialUser = new SocialUser;
+  public user:any;
+  public user$: Observable<any> = this._afAuth.user
+
   loggedIn: boolean = false;
 
-  constructor(private authService: SocialAuthService) { }
+  constructor(private _afAuth:AngularFireAuth) { }
 
   ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-    });
+   
   }
 }

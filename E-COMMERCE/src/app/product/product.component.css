@@ -1,0 +1,15 @@
+.btnV button{
+    color: black;
+}
+.btnV:hover button{
+    color: white;
+}
+
+.contenedor{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.contenedor img{
+    width: 200px;
+    height: 200px;
+}

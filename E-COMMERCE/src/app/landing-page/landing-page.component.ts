@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { SocialAuthService } from "angularx-social-login";
-import { SocialUser } from "angularx-social-login";
+//service
+import { ServiceAuthService } from '../service-auth.service'
 
 
 @Component({
@@ -14,32 +14,32 @@ import { SocialUser } from "angularx-social-login";
 export class LandingPageComponent implements OnInit {
 
   formContacUs = new FormGroup({
-    fullName: new FormControl('',Validators.required),
-    email: new FormControl('',Validators.required),
-    message : new FormControl('',Validators.required)
+    fullName: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    message: new FormControl('', Validators.required)
   })
 
   // public logued=false
   // public user:any
   // public logued=false
   // public user:any
-  user: SocialUser = new SocialUser;
+
   loggedIn: boolean = false;
 
-  constructor(private router : Router, private authService: SocialAuthService) { }
+  constructor(private router: Router, private _svc: ServiceAuthService) { }
 
-  async ngOnInit(){
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-    });
+  async ngOnInit() {
+    const user = await this._svc.getUser()
+    if (user) {
+      this.loggedIn = true
+    }
   }
 
-  redirectTo(){
+  redirectTo() {
     this.router.navigate(['/register'])
   }
-  
-  valuesEmail(){
+
+  valuesEmail() {
     console.log(this.formContacUs.value)
   }
 }

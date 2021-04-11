@@ -1,0 +1,8 @@
+.datosUser{
+    background-color: darkgrey;
+    width: 600px;
+    height: 600px;
+}
+.imgUser img{
+    border-radius: 50%;
+}

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceAuthService} from '../service-auth.service'
-import { SocialAuthService } from "angularx-social-login";
-import { SocialUser } from "angularx-social-login";
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
+import { ServiceAuthService} from '../service-auth.service'
+import { AngularFireAuth } from '@angular/fire/auth'
 @Component({
   selector: 'app-nvar',
   templateUrl: './nvar.component.html',
@@ -10,16 +11,18 @@ import { SocialUser } from "angularx-social-login";
 })
 export class NvarComponent implements OnInit {
 
-  user: SocialUser = new SocialUser;
+  public user:any;
+  public user$: Observable<any> = this._afAuth.user
   loggedIn: boolean = false;
 
-  constructor(private _service :ServiceAuthService,private authService: SocialAuthService) { }
+  constructor(private _service :ServiceAuthService,private router:Router,private _afAuth:AngularFireAuth) { }
 
-  ngOnInit(): void {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-    });
+  async ngOnInit(){
+    
+    const user = await this._service.getUser();
+    if(user){
+      this.loggedIn = true;
+    }
   }
   
 
@@ -37,7 +40,12 @@ export class NvarComponent implements OnInit {
     console.log("hola");
   }
 
-  logOut(){
-    this._service.signOut()
+  async logOut(){
+    try{
+      await this._service.signOut()
+      this.router.navigate(["/login"])
+    }catch(error){
+      console.log(error)
+    }
   }
 }

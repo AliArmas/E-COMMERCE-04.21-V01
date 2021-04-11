@@ -1,5 +1,19 @@
-<img src="{{ user.photoUrl }}">
-<div>
-  <h4>Usuario {{ user.name }}</h4>
-  <p>correo : {{ user.email }}</p>
+<div *ngIf="user$ | async as user">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div>
+          <h3>
+            Hola {{user.displayName}}
+          </h3>
+        </div>
+      </div>
+      <div class="blue column">Blue</div>
+      <div class="col">
+        <div>
+          <h1>hola perra</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

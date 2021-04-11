@@ -28,14 +28,7 @@ h5{
     text-align-last: center;
     text-align: center;
 }
-.accordion-button{
-    background-color:white;
-    color: black;
-}
-.accordion-button:hover{
-    background-color: black;
-    color: white;
-}
+
 .accordion-button{
     width: 800px;
     height: 60px;

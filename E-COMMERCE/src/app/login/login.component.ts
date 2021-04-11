@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { ServiceAuthService } from '../service-auth.service'
 
 @Component({
@@ -25,7 +26,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log(this.loginForm.value)
+    const {user,password} = this.loginForm.value
+    this._AUTHSERVICE.login(user,password)
   }
 
   onRegisterGoogle(){
