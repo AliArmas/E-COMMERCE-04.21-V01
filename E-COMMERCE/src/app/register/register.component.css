@@ -35,3 +35,6 @@ h1{
     text-align: center;
 }
 /* -            --- -- - - -- -  -- - - -  */
+.input button{
+    background-color: black;
+}
