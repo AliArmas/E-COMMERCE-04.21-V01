@@ -10,13 +10,21 @@ import { ServiceAuthService } from '../service-auth.service'
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+// export class Archivo{
+//   constructor(
+//     public id : number,
+//     public nombre : string,
+//     public imagen : string,
+//   ){}
+// }
+
 export class RegisterComponent implements OnInit {
 
   // pattern : any = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
   
   
   
-  constructor(private sanitizer: DomSanitizer,private router: Router, private _formBuild: FormBuilder, private _AuthService: ServiceAuthService) { }
+  constructor(private router: Router, private _formBuild: FormBuilder, private _AuthService: ServiceAuthService) { }
   
   public archivo :any = [];
   registerFrom = new FormGroup({
@@ -43,31 +51,27 @@ export class RegisterComponent implements OnInit {
 
   capturaFile(_event: any){
     const getFile =_event.target.files[0]; 
-    // this.blobFile(getFile).then( imagen =>{
-    //   console.log(imagen)
+    //  this.blobFile(getFile).then( imagen =>{
+    //    console.log(imagen)
     // })
-    console.log(_event.target.files[0])
+    console.log(_event.target.files.name)
   }
   // blobFile = async ($event: any) => new Promise((resolve, reject ) => {
-  //   try {
-  //     const unsafeImg = window.URL.createObjectURL($event);
-  //     const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
-  //     const reader = new FileReader();
-  //     reader.readAsDataURL($event);
-  //     reader.onload = () => {
-  //       resolve({
-  //         blob: $event,
-  //         image,
-  //         base: reader.result
-  //       });
-  //     };
-  //     reader.onerror = error => {
-  //       resolve({
-  //         blob: $event,
-  //         image,
-  //         base: null
-  //       });
-  //     };
+  //    try {
+  //      const unsafeImg = window.URL.createObjectURL($event);
+  //      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+  //      const reader = new FileReader();
+  //      reader.readAsDataURL($event);
+  //      reader.onload = () => {
+  //        resolve(
+  //          base: reader.result
+  //        });
+  //      };
+  //      reader.onerror = error => {
+  //        resolve({
+  //          base: null
+  //        });
+  //      };
 
   //   } catch (e) {
   //     return null;
@@ -81,11 +85,6 @@ export class RegisterComponent implements OnInit {
   //     console.log(error);
   //   });
   // }--proxy-config proxy.json
-  registerPy() {
-    const data = this.registerFrom.value;
-    console.log(data)
-    //this.svc.registerPost(data.user,data.name,data.email,data.password,data.status)
-  }
 
   create() {
     const { email, password,img } = this.registerFrom.value;

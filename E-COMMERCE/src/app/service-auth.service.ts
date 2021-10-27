@@ -24,10 +24,10 @@ export class ServiceAuthService {
     return result;
   }
 
-  async signInWithGoogle(){ 
+  async signInWithGoogle(){
     return await this._fireAuth.signInWithPopup(new firebase.default.auth.GoogleAuthProvider)
   }
-  async signInWithFB(){ 
+  async signInWithFB(){
     return await this._fireAuth.signInWithPopup(new firebase.default.auth.FacebookAuthProvider)
   }
   //deslogueo de usuario
@@ -42,7 +42,7 @@ export class ServiceAuthService {
   getUser() {
     return this._fireAuth.authState.pipe(first()).toPromise()
   }
-   
+
 
 
 
